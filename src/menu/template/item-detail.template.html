@@ -1,0 +1,24 @@
+<h3>Category: {{itemDetail.categoryName}} {{itemDetail.categoryShortName}} 
+    {{itemDetail.categorySpecialInstructions}}
+ !
+</h3>
+
+<table class='menuItems'>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+        </tr>
+    </thead>
+    <tr ng-repeat="item in itemDetail.menu_items">
+        <td>{{item.name}} ({{item.short_name}})</td>
+        <td>
+            large: ${{item.price_large}}<br>
+           <span ng-if="item.price_small">small: ${{item.price_small}}</span> 
+        </td>
+        <td>{{item.description}}
+            <span ng-hide="item.description">no description</span>
+        </td>
+    </tr>
+</table>
